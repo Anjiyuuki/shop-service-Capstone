@@ -8,6 +8,7 @@ ng serve
 ### IDENTITY
 
 POST - localhost:8080/auth/register
+
 {
     "name":{
         "firstName":"myName",
@@ -43,10 +44,12 @@ DELETE - localhost:8080/admin/users/{userId}
 ### PRODUCT
 
 GET - localhost:8080/product/products
-returns all the product 
+
 
 POST - localhost:8080/product/admin/products
+
 put in token 
+
 {
     "name": "TV",
     "description": "Brand new TV",
@@ -58,7 +61,7 @@ put in token
 GET - localhost:8080/product/products/{id}
 
 PUT - localhost:8080/product/admin/products/{id}
-update the product (include token)
+
 
 DELETE - localhost:8080/product/admin/products/{id}
 
@@ -70,6 +73,7 @@ POST - localhost:8080/product/admin/products/bulk-upload
 
 ### CART
 POST - localhost:8080/cart/{userId}/add
+
 use param , include token
 key - productId
 value - number
@@ -79,6 +83,7 @@ GET - localhost:8080/cart/{userId}
 DELETE - localhost:8080/{userId}/remove/{productId}
 
 PUT - localhost:8080/cart/1/update
+
 [{
     "productId":1,
     "quantity":40
@@ -86,19 +91,20 @@ PUT - localhost:8080/cart/1/update
 
 ### DISCOUNT
 POST - localhost:8080/discount/admin/add
+
 {
     "saving": 20,
     "code": "SUMMER"
 }
 
 POST - localhost:8080/discount/code
+
 param
-key - code
+key - code,
 value - SUMMER
 
 ### ORDERS
 POST - 	localhost:8080/orders/{userId}
-need to init from cart first
 
 GET - localhost:8080/orders/{userId}
 
@@ -107,8 +113,9 @@ GET - localhost:8080/orders/detail/{orderId}
 
 ### WISHLIST
 POST - localhost:8080/wishlist/{userId}
+
 param
-key - productId
+key - productId,
 value - num
 
 GET - localhost:8080/wishlist/{userId}
