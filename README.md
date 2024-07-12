@@ -1,24 +1,25 @@
-## ShopService Documentation 
+# ShopService Documentation 
 
 ##  Front End 
 npm install
+
 ng serve
 ## Back End
-# IDENTITY
+### IDENTITY
 
 POST - localhost:8080/auth/register
 {
     "name":{
-        "firstName":"Angie",
-        "lastName": "Bui"
+        "firstName":"myName",
+        "lastName": "mylast"
     },
     "address":{
-        "city":"SC",
+        "city":"NY",
         "street":"street",
         "number": 5,
         "zipcode":"1234"
     },
-    "email":"Angie123@gmail.com",
+    "email":"myEmail@gmail.com",
     "pass":"test123",
     "role":"ADMIN",
     "phoneNumber":"1234567890"
@@ -28,8 +29,8 @@ POST - localhost:8080/auth/register
 POST - localhost:8080/auth/login
 
 {
-  "email": "jane.doe@example.com",
-  "password": "securePassword123"
+  "email":"myEmail@gmail.com",
+    "password":"test123"
 }
 
 GET - localhost:8080/auth/admin/users
@@ -39,7 +40,7 @@ PUT - localhost:8080/admin/users/{userId}
 
 DELETE - localhost:8080/admin/users/{userId}
 
-# PRODUCT
+### PRODUCT
 
 GET - localhost:8080/product/products
 returns all the product 
@@ -67,7 +68,7 @@ GET - localhost:8080/product/products/categories
 
 POST - localhost:8080/product/admin/products/bulk-upload
 
-# CART
+### CART
 POST - localhost:8080/cart/{userId}/add
 use param , include token
 key - productId
@@ -83,7 +84,7 @@ PUT - localhost:8080/cart/1/update
     "quantity":40
 }]
 
-# DISCOUNT
+### DISCOUNT
 POST - localhost:8080/discount/admin/add
 {
     "saving": 20,
@@ -95,7 +96,7 @@ param
 key - code
 value - SUMMER
 
-# ORDERS
+### ORDERS
 POST - 	localhost:8080/orders/{userId}
 need to init from cart first
 
@@ -104,7 +105,7 @@ GET - localhost:8080/orders/{userId}
 GET - localhost:8080/orders/detail/{orderId}
 
 
-# WISHLIST
+### WISHLIST
 POST - localhost:8080/wishlist/{userId}
 param
 key - productId
