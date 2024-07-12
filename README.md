@@ -1,3 +1,124 @@
+## ShopService Documentation 
+
+##  Front End 
+npm install
+ng serve
+## Back End
+# IDENTITY
+
+POST - localhost:8080/auth/register
+{
+    "name":{
+        "firstName":"Angie",
+        "lastName": "Bui"
+    },
+    "address":{
+        "city":"SC",
+        "street":"street",
+        "number": 5,
+        "zipcode":"1234"
+    },
+    "email":"Angie123@gmail.com",
+    "pass":"test123",
+    "role":"ADMIN",
+    "phoneNumber":"1234567890"
+
+}
+
+POST - localhost:8080/auth/login
+
+{
+  "email": "jane.doe@example.com",
+  "password": "securePassword123"
+}
+
+GET - localhost:8080/auth/admin/users
+Enter the Bearer Token 
+
+PUT - localhost:8080/admin/users/{userId}
+
+DELETE - localhost:8080/admin/users/{userId}
+
+# PRODUCT
+
+GET - localhost:8080/product/products
+returns all the product 
+
+POST - localhost:8080/product/admin/products
+put in token 
+{
+    "name": "TV",
+    "description": "Brand new TV",
+    "price": 99.99,
+    "category": "Electronic",
+    "imageUrl": "image1.png"
+}
+
+GET - localhost:8080/product/products/{id}
+
+PUT - localhost:8080/product/admin/products/{id}
+update the product (include token)
+
+DELETE - localhost:8080/product/admin/products/{id}
+
+GET - localhost:8080/product/products/categories/{category}
+
+GET - localhost:8080/product/products/categories
+
+POST - localhost:8080/product/admin/products/bulk-upload
+
+# CART
+POST - localhost:8080/cart/{userId}/add
+use param , include token
+key - productId
+value - number
+
+GET - localhost:8080/cart/{userId}
+
+DELETE - localhost:8080/{userId}/remove/{productId}
+
+PUT - localhost:8080/cart/1/update
+[{
+    "productId":1,
+    "quantity":40
+}]
+
+# DISCOUNT
+POST - localhost:8080/discount/admin/add
+{
+    "saving": 20,
+    "code": "SUMMER"
+}
+
+POST - localhost:8080/discount/code
+param
+key - code
+value - SUMMER
+
+# ORDERS
+POST - 	localhost:8080/orders/{userId}
+need to init from cart first
+
+GET - localhost:8080/orders/{userId}
+
+GET - localhost:8080/orders/detail/{orderId}
+
+
+# WISHLIST
+POST - localhost:8080/wishlist/{userId}
+param
+key - productId
+value - num
+
+GET - localhost:8080/wishlist/{userId}
+
+DELETE - localhost:8080/wishlist/{userId}/remove/{productId}
+
+
+
+
+
+
 # ShopServiceApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.12.
